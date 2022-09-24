@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import useLocalStorage from 'hooks/useLocalStorage';
 import shortid from 'shortid';
+import { filter } from 'redux/store';
 import Form from './Form/Form';
 import Contacts from './Contacts';
 import Filter from './Filter';
@@ -13,7 +15,8 @@ export default function App() {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ]);
   const [filter, setFilter] = useState('');
-
+  const dispatch = useDispatch();
+  // const filterContacts = useSelector(state => state.filter);
   const formSubmit = ({ name, number }) => {
     setContacts(contacts => {
       if (contacts.find(contact => contact.name === name)) {
@@ -54,3 +57,4 @@ export default function App() {
     </>
   );
 }
+// findContacts()
