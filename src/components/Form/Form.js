@@ -6,7 +6,6 @@ import s from './Form.module.css';
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
   const nameInputId = shortid.generate();
   const numberInputId = shortid.generate();
 
